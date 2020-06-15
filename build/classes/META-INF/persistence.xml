@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="ZafiroDesktopPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>com.zafirodesktop.entity.Concept</class>
+    <class>com.zafirodesktop.entity.Product</class>
+    <class>com.zafirodesktop.entity.Tax</class>
+    <class>com.zafirodesktop.entity.Tranzaction</class>
+    <class>com.zafirodesktop.entity.Users</class>
+    <class>com.zafirodesktop.entity.Place</class>
+    <class>com.zafirodesktop.entity.Stock</class>
+    <class>com.zafirodesktop.entity.ItemCategory</class>
+    <class>com.zafirodesktop.entity.Invoice</class>
+    <class>com.zafirodesktop.entity.Groups</class>
+    <class>com.zafirodesktop.entity.Quotation</class>
+    <class>com.zafirodesktop.entity.ProductCategory</class>
+    <class>com.zafirodesktop.entity.Remission</class>
+    <class>com.zafirodesktop.entity.LoginAttempts</class>
+    <class>com.zafirodesktop.entity.Person</class>
+    <class>com.zafirodesktop.entity.Office</class>
+    <class>com.zafirodesktop.entity.TransactionDetail</class>
+    <class>com.zafirodesktop.entity.Discount</class>
+    <class>com.zafirodesktop.entity.Payment</class>
+    <class>com.zafirodesktop.entity.CategoryDiscount</class>
+    <class>com.zafirodesktop.entity.QuotationDetail</class>
+    <class>com.zafirodesktop.entity.Warehouse</class>
+    <class>com.zafirodesktop.entity.Category</class>
+    <class>com.zafirodesktop.entity.Arqueo</class>
+    <class>com.zafirodesktop.entity.Settings</class>
+    <class>com.zafirodesktop.entity.TotalesEgresos</class>
+    <class>com.zafirodesktop.entity.TotalesIngresos</class>
+    <class>com.zafirodesktop.entity.MovimientosProducto</class>
+    <class>com.zafirodesktop.entity.FacturasAnuladas</class>
+    <class>com.zafirodesktop.entity.Inventory</class>
+    <class>com.zafirodesktop.entity.ProductTaxes</class>
+    <class>com.zafirodesktop.entity.Annotation</class>
+    <class>com.zafirodesktop.entity.MinimumStock</class>
+    <class>com.zafirodesktop.entity.Deposit</class>
+    <class>com.zafirodesktop.entity.TopSelled</class>
+    <class>com.zafirodesktop.entity.Turn</class>
+    <class>com.zafirodesktop.entity.ProductDiscount</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:derby://CAJA-PC:1527/zafiro"/>
+      <property name="javax.persistence.jdbc.password" value="$764 %e2 w{~Y~b"/>
+      <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+      <property name="javax.persistence.jdbc.user" value="zafiro"/>
+    </properties>
+  </persistence-unit>
+</persistence>

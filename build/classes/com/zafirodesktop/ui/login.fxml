@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="pane" prefHeight="400.0" prefWidth="600.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.zafirodesktop.controller.LoginController">
+  <children>
+    <AnchorPane id="headerContent" prefHeight="40.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <HBox id="HBox" alignment="CENTER" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="0.0">
+          <children>
+            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@img/ico/person_white.png" />
+              </image>
+            </ImageView>
+            <Label styleClass="titlelabel" text="%loginTitle" />
+          </children>
+        </HBox>
+      </children>
+    </AnchorPane>
+    <AnchorPane id="bodyContent" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="40.0">
+      <children>
+        <HBox id="HBox" alignment="CENTER" prefWidth="600.0" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+          <children>
+            <ImageView fitHeight="56.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" smooth="true" visible="true" HBox.hgrow="ALWAYS">
+              <image>
+                <Image url="@img/logo.png" />
+              </image>
+            </ImageView>
+          </children>
+        </HBox>
+        <GridPane AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="70.0">
+          <children>
+            <TextField id="user" fx:id="username" onKeyReleased="#validMessage" prefWidth="200.0" styleClass="userTextField" text="" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <PasswordField fx:id="passwd" onKeyReleased="#validMessage" prefWidth="200.0" styleClass="passwdTextField" text="" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="20.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+              <children>
+                <CheckBox fx:id="chkRemember" mnemonicParsing="false" selected="true" styleClass="messageLabel" text="%txtChkRemember" />
+                <Button mnemonicParsing="false" onAction="#loadResetPassword" styleClass="trasnparentButton" text="Olvidé mi contraseña" />
+              </children>
+            </HBox>
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="347.0" minWidth="10.0" prefWidth="347.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="209.0" minWidth="10.0" prefWidth="113.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="68.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+        <HBox id="HBox" alignment="CENTER" prefWidth="600.0" spacing="5.0" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+          <children>
+            <Button fx:id="loginBt" mnemonicParsing="false" onAction="#login" styleClass="actionButton" text="Login" />
+          </children>
+        </HBox>
+        <HBox id="HBox" alignment="CENTER" prefWidth="600.0" spacing="5.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+          <children>
+            <Label fx:id="lblMessage" maxWidth="500.0" styleClass="messageLabel" text="Message label" visible="false" wrapText="true" />
+          </children>
+        </HBox>
+      </children>
+    </AnchorPane>
+    <Button id="close" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="20.0" prefWidth="20.0" styleClass="exitTrasnparentButton" text="" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+    <Button id="close" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#minimizeButtonAction" prefHeight="20.0" prefWidth="20.0" styleClass="minimizeTrasnparentButton" text="" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="10.0" />
+  </children>
+  <stylesheets>
+    <URL value="@css/login_green.css" />
+  </stylesheets>
+</AnchorPane>

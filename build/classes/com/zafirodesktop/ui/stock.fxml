@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="mainPane" prefHeight="320.0" prefWidth="650.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.zafirodesktop.controller.ReportsController">
+  <children>
+    <AnchorPane id="Content" layoutX="1.0" layoutY="1.0" minHeight="0.0" minWidth="0.0" prefHeight="320.0" prefWidth="650.0">
+      <children>
+        <AnchorPane id="headerContent" prefHeight="40.0" prefWidth="680.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+          <children>
+            <HBox id="HBox" alignment="CENTER" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="0.0">
+              <children>
+                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@img/ico/report_whit.png" />
+                  </image>
+                </ImageView>
+                <Label styleClass="titlelabel" text="%inventoryReportTitle" />
+              </children>
+            </HBox>
+          </children>
+        </AnchorPane>
+        <AnchorPane id="bodyContent" prefHeight="245.0" prefWidth="580.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="40.0">
+          <children>
+            <GridPane id="gridPane" hgap="0.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+              <children>
+                <HBox id="HBox" alignment="CENTER" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                  <children>
+                    <Label fx:id="description" maxWidth="-1.0" styleClass="messagesLabel" text="%inventoryReportDescription" wrapText="true" />
+                  </children>
+                </HBox>
+                <HBox id="HBox" alignment="CENTER" spacing="10.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                  <children>
+                    <Button fx:id="generateButton" disable="false" mnemonicParsing="false" onAction="#inventoryReport" prefHeight="35.0" prefWidth="150.0" styleClass="actionButton" text="%stockButton" visible="true">
+                      <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="22.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/movement_white.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                      <tooltip>
+                        <Tooltip text="%stockReportTltp" />
+                      </tooltip>
+                    </Button>
+                    <Button id="inventoryReport" fx:id="importButton" disable="false" mnemonicParsing="false" onAction="#loadProductsMovements" prefHeight="35.0" prefWidth="150.0" styleClass="printButton" text="%movementButton">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/inventory_white.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                      <tooltip>
+                        <Tooltip text="%movementReportTltp" />
+                      </tooltip>
+                    </Button>
+                    <Button id="minimumStock" disable="false" mnemonicParsing="false" onAction="#minimumStockReport" prefHeight="35.0" prefWidth="150.0" styleClass="addButton" text="%amountButton">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/warning_white.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                      <tooltip>
+                        <Tooltip text="%minAmountReportTltp" />
+                      </tooltip>
+                    </Button>
+                    <Button id="topSelled" disable="false" mnemonicParsing="false" onAction="#loadProductsMovements" prefHeight="35.0" prefWidth="150.0" styleClass="removeButton" text="%topSelledButton">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/invoices_white.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                      <tooltip>
+                        <Tooltip text="%topSelledReportTltp" />
+                      </tooltip>
+                    </Button>
+                  </children>
+                </HBox>
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-1.0" minWidth="10.0" prefWidth="-1.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="178.0" minHeight="10.0" prefHeight="177.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="125.0" minHeight="10.0" prefHeight="76.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+          </children>
+        </AnchorPane>
+        <Button id="close" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="20.0" prefWidth="20.0" styleClass="exitTrasnparentButton" text="" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+        <Button id="close" fx:id="helpButton" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#showHideTooltip" prefHeight="20.0" prefWidth="20.0" styleClass="helpTrasnparentButton" text="" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="10.0">
+          <tooltip>
+            <Tooltip text="%helpTltp" fx:id="tlpHelp" />
+          </tooltip>
+        </Button>
+      </children>
+    </AnchorPane>
+    <HBox id="HBox" alignment="CENTER" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+      <children>
+        <ImageView fx:id="loading" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" visible="false">
+          <image>
+            <Image url="@img/loading.gif" />
+          </image>
+        </ImageView>
+      </children>
+    </HBox>
+  </children>
+  <stylesheets>
+    <URL value="@css/modal_green.css" />
+  </stylesheets>
+</AnchorPane>

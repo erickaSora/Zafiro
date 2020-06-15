@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="mainPane" prefHeight="768.0" prefWidth="1024.0" styleClass="root" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zafirodesktop.controller.MainController">
+  <children>
+    <VBox id="VBox" fx:id="viewTitlePane" alignment="CENTER" spacing="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+      <children>
+        <Label styleClass="totalValueslabel" text="%adminViewTitle" />
+        <Button fx:id="changeViewButton" mnemonicParsing="false" onAction="#changeView" styleClass="changeViewButton" text="%adminChangeViewButton">
+          <tooltip>
+            <Tooltip text="%changeViewButtonTltp" />
+          </tooltip>
+        </Button>
+      </children>
+    </VBox>
+    <Separator prefHeight="5.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0" />
+    <AnchorPane id="contentPane" prefHeight="200.0" prefWidth="200.0" visible="true" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="85.0">
+      <children>
+        <AnchorPane id="headerContent" prefHeight="40.0" prefWidth="200.0" visible="true" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="25.0">
+          <children>
+            <HBox id="HBox" alignment="CENTER" spacing="10.0" visible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="0.0">
+              <children>
+                <ImageView fx:id="imageContent" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@img/ico/dash_white.png" />
+                  </image>
+                </ImageView>
+                <Label fx:id="contentTitle" prefWidth="684.0" styleClass="titlelabel" text="Title Label">
+                  <tooltip>
+                    <Tooltip text="%moduleTitleTltp" />
+                  </tooltip>
+                </Label>
+              </children>
+            </HBox>
+          </children>
+        </AnchorPane>
+        <AnchorPane id="wlcomePanel" fx:id="welcomePane" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="65.0">
+          <children>
+            <VBox id="VBox" alignment="CENTER" spacing="5.0" visible="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0" />
+            <GridPane fx:id="chartsPane" alignment="CENTER" gridLinesVisible="false" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+              <children>
+                <HBox id="HBox" fx:id="leftChartReport" alignment="TOP_CENTER" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                  <children>
+                    <Button mnemonicParsing="false" onAction="#minimunStockReport" prefHeight="27.0" prefWidth="200.0" styleClass="actionButton" text="%completeReportButton">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="0.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/next_white.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                  </children>
+                </HBox>
+                <HBox id="HBox" fx:id="rigthChartReport" alignment="TOP_CENTER" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <children>
+                    <Button mnemonicParsing="false" onAction="#activeCreditReport" prefHeight="27.0" prefWidth="200.0" styleClass="actionButton" text="%completeReportButton">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/next_white.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                  </children>
+                </HBox>
+                <HBox id="HBox" alignment="CENTER" spacing="15.0" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
+                  <children>
+                    <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="statistic-left" HBox.hgrow="ALWAYS">
+                      <children>
+                        <ImageView fitHeight="0.0" fitWidth="0.0" focusTraversable="false" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0">
+                          <image>
+                            <Image url="@img/ico/doalr_white_desv.png" />
+                          </image>
+                        </ImageView>
+                        <Button id="entriesReport" alignment="CENTER_LEFT" minHeight="18.0" mnemonicParsing="false" onAction="#loadSettingsModal" prefHeight="18.0" prefWidth="372.0" styleClass="statistic-left-button" text="%completeReportButton" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                          <graphic>
+                            <ImageView fitHeight="15.0" fitWidth="15.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                <Image url="@img/ico/next_white.png" />
+                              </image>
+                            </ImageView>
+                          </graphic>
+                        </Button>
+                        <VBox id="VBox" alignment="TOP_RIGHT" spacing="0.0" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
+                          <children>
+                            <Label fx:id="leftChart" alignment="CENTER_RIGHT" prefWidth="226.0" styleClass="statistic-font" text="Label" textAlignment="LEFT" wrapText="true">
+                              <tooltip>
+                                <Tooltip text="%statisticsReport1Tltp" />
+                              </tooltip>
+                            </Label>
+                            <Label id="leftChart" fx:id="leftChart2" alignment="CENTER_RIGHT" prefWidth="226.0" styleClass="statistic-font2" text="Label" wrapText="true">
+                              <tooltip>
+                                <Tooltip text="%statisticsReport1Tltp" />
+                              </tooltip>
+                            </Label>
+                          </children>
+                        </VBox>
+                      </children>
+                    </AnchorPane>
+                    <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="statistic-center" HBox.hgrow="ALWAYS">
+                      <children>
+                        <ImageView fitHeight="44.19482421875" fitWidth="44.19482421875" focusTraversable="false" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0">
+                          <image>
+                            <Image url="@img/ico/invoices_white_desv.png" />
+                          </image>
+                        </ImageView>
+                        <Button id="topSelled" alignment="CENTER_LEFT" minHeight="18.0" mnemonicParsing="false" onAction="#loadSettingsModal" prefHeight="18.0" prefWidth="372.0" styleClass="statistic-center-button" text="%completeReportButton" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                          <graphic>
+                            <ImageView fitHeight="15.0" fitWidth="15.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                <Image url="@img/ico/next_white.png" />
+                              </image>
+                            </ImageView>
+                          </graphic>
+                        </Button>
+                        <VBox id="VBox" alignment="TOP_RIGHT" spacing="0.0" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
+                          <children>
+                            <Label id="leftChart" fx:id="centerChart" alignment="CENTER_RIGHT" prefWidth="226.0" styleClass="statistic-font" text="Label" wrapText="true">
+                              <tooltip>
+                                <Tooltip text="%statisticsReport2Tltp" />
+                              </tooltip>
+                            </Label>
+                            <Label id="leftChart" fx:id="centerChart2" alignment="CENTER_RIGHT" prefWidth="226.0" styleClass="statistic-font2" text="Label" wrapText="true">
+                              <tooltip>
+                                <Tooltip text="%statisticsReport2Tltp" />
+                              </tooltip>
+                            </Label>
+                          </children>
+                        </VBox>
+                      </children>
+                    </AnchorPane>
+                    <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="statistic-rigth" HBox.hgrow="ALWAYS">
+                      <children>
+                        <ImageView fitHeight="0.0" fitWidth="0.0" focusTraversable="false" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0">
+                          <image>
+                            <Image url="@img/ico/quotation_white_desv.png" />
+                          </image>
+                        </ImageView>
+                        <Button id="expensesReport" alignment="CENTER_LEFT" minHeight="18.0" mnemonicParsing="false" onAction="#loadSettingsModal" prefHeight="18.0" prefWidth="372.0" styleClass="statistic-rigth-button" text="%completeReportButton" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                          <graphic>
+                            <ImageView fitHeight="15.0" fitWidth="15.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                <Image url="@img/ico/next_white.png" />
+                              </image>
+                            </ImageView>
+                          </graphic>
+                        </Button>
+                        <VBox id="VBox" alignment="TOP_RIGHT" spacing="0.0" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
+                          <children>
+                            <Label id="leftChart" fx:id="rigthChart" alignment="CENTER_RIGHT" prefWidth="226.0" styleClass="statistic-font" text="Label" wrapText="true">
+                              <tooltip>
+                                <Tooltip text="%statisticsReport3Tltp" />
+                              </tooltip>
+                            </Label>
+                            <Label id="leftChart" fx:id="rigthChart2" alignment="CENTER_RIGHT" prefWidth="226.0" styleClass="statistic-font2" text="Label">
+                              <tooltip>
+                                <Tooltip text="%statisticsReport3Tltp" wrapText="true" />
+                              </tooltip>
+                            </Label>
+                          </children>
+                        </VBox>
+                      </children>
+                    </AnchorPane>
+                  </children>
+                </HBox>
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints fillHeight="true" maxHeight="90.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="600.0" minHeight="10.0" prefHeight="327.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+          </children>
+        </AnchorPane>
+        <AnchorPane id="bodyContent" fx:id="contentPane" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="65.0">
+          <children>
+            <Button fx:id="newItemBT" mnemonicParsing="false" onAction="#insertNewItemModal" prefHeight="30.0" styleClass="actionButton" text="Registrar nuevo" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="30.0">
+              <graphic>
+                <ImageView fitHeight="15.0" fitWidth="15.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@img/ico/add_white.png" />
+                  </image>
+                </ImageView>
+              </graphic>
+              <tooltip>
+                <Tooltip text="%newItemButtonTltp" />
+              </tooltip>
+            </Button>
+            <HBox id="HBox" alignment="CENTER" spacing="0.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="30.0">
+              <children>
+                <AnchorPane maxHeight="28.0" prefHeight="28.0" prefWidth="30.0" styleClass="textfieldImage">
+                  <children>
+                    <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-5.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="5.0">
+                      <image>
+                        <Image url="@img/ico/search_black.png" />
+                      </image>
+                    </ImageView>
+                  </children>
+                </AnchorPane>
+                <TextField fx:id="searchTF" onKeyReleased="#searchTableView" prefHeight="30.0" prefWidth="502.0">
+                  <tooltip>
+                    <Tooltip text="%searchModuleItemTltp" />
+                  </tooltip>
+                </TextField>
+              </children>
+            </HBox>
+            <Button fx:id="productsBarcode" mnemonicParsing="false" onAction="#printAllProducts" prefHeight="25.0" prefWidth="117.0" styleClass="printButton" text="%allBarcodeButton" visible="false" AnchorPane.rightAnchor="425.0" AnchorPane.topAnchor="65.0">
+              <graphic>
+                <ImageView fitHeight="15.0" fitWidth="15.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@img/ico/print_white.png" />
+                  </image>
+                </ImageView>
+              </graphic>
+            </Button>
+            <TableView fx:id="dataTable" onMouseClicked="#loadSelectedTableViewItem" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="100.0">
+              <tooltip>
+                <Tooltip text="%tableViewModuleTltp" />
+              </tooltip>
+            </TableView>
+            <ComboBox fx:id="productCategories" disable="true" minHeight="25.0" onAction="#selectedComboBoxUpdateListSecondary" prefHeight="25.0" prefWidth="200.0" styleClass="list-cell" visible="false" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="65.0" />
+            <ComboBox fx:id="categories" disable="true" minHeight="25.0" onAction="#selectedComboBoxUpdateListMain" prefHeight="25.0" prefWidth="200.0" styleClass="list-cell" visible="false" AnchorPane.rightAnchor="220.0" AnchorPane.topAnchor="65.0" />
+            <HBox id="HBox" alignment="CENTER" spacing="5.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="75.0">
+              <children>
+                <Label fx:id="resultsDesc" styleClass="welcomeText" text="15 resultados encontrados" />
+              </children>
+            </HBox>
+          </children>
+        </AnchorPane>
+        <HBox fx:id="messagesPanel" alignment="CENTER" spacing="5.0" visible="false" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="-20.0">
+          <children>
+            <Label fx:id="message" styleClass="infoMessage" text="Label" />
+          </children>
+        </HBox>
+      </children>
+    </AnchorPane>
+    <AnchorPane id="menuPane" prefHeight="200.0" prefWidth="230.0" styleClass="menuPane" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="85.0">
+      <children>
+        <Accordion id="menuPane" prefWidth="230.0" styleClass="accordeonMenu" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+          <panes>
+            <TitledPane fx:id="homePane" animated="false" text="%welcomeMenu">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="30.0" prefWidth="200.0" styleClass="accordeonPane">
+                  <children>
+                    <Button fx:id="home" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#displayHome" styleClass="menuButton" text="%homeButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/dash_black.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                  </children>
+                </AnchorPane>
+              </content>
+              <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@img/ico/dash_white.png" />
+                  </image>
+                </ImageView>
+              </graphic>
+              <tooltip>
+                <Tooltip text="%homeMenuTltp" />
+              </tooltip>
+            </TitledPane>
+            <TitledPane fx:id="settingsPane" animated="false" text="%settingsMenu">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="accordeonPane">
+                  <children>
+                    <Button fx:id="settings" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#loadSettingsModal" prefWidth="226.0" styleClass="menuButton" text="%settingsButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/settings_black.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                    <Button fx:id="backup" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#loadSettingsModal" prefWidth="226.0" styleClass="menuButton" text="%backupsButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/upload_black.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                    <Button fx:id="impor" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#loadSettingsModal" prefWidth="226.0" styleClass="menuButton" text="%importProductButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/save_black.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                    <Button fx:id="users" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#displaySelectedMenu" prefWidth="226.0" styleClass="menuButton" text="%usersButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="90.0">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/user_black.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                    <Button fx:id="tax" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#displaySelectedMenu" prefWidth="226.0" styleClass="menuButton" text="%taxesButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/percent_black.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                    <Button fx:id="discount" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#displaySelectedMenu" prefWidth="226.0" styleClass="menuButton" text="%discountButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/quotation_black.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                  </children>
+                </AnchorPane>
+              </content>
+              <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@img/ico/settings_white.png" />
+                  </image>
+                </ImageView>
+              </graphic>
+              <tooltip>
+                <Tooltip text="%settingsMenuTltp" />
+              </tooltip>
+            </TitledPane>
+            <TitledPane fx:id="personsPane" animated="false" text="%personMenu">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="90.0" prefWidth="200.0" styleClass="accordeonPane">
+                  <children>
+                    <Button fx:id="person" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#displaySelectedMenu" styleClass="menuButton" text="%personButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/person_black.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                    <Button fx:id="credit" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#displaySelectedMenu" styleClass="menuButton" text="%creditButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/doalr_blac.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                              <Button fx:id="creditOrder" alignment="CENTER_LEFT" layoutX="20.0" layoutY="50.0" mnemonicParsing="false" onAction="#displaySelectedMenu" styleClass="menuButton" text="%creditOrderButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@img/ico/quotation_black.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                  </children>
+                </AnchorPane>
+              </content>
+              <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@img/ico/person_white.png" />
+                  </image>
+                </ImageView>
+              </graphic>
+              <tooltip>
+                <Tooltip text="%personMenuTltp" />
+              </tooltip>
+            </TitledPane>
+            <TitledPane id="x1" animated="false" text="%inventoryMenu" fx:id="x4">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="200.0" styleClass="accordeonPane">
+                  <children>
+                    <Button fx:id="product" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#displaySelectedMenu" prefWidth="226.0" styleClass="menuButton" text="%productsButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/product_black.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                    <Button fx:id="category" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#displaySelectedMenu" prefWidth="226.0" styleClass="menuButton" text="%categoryButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/category_black.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                    <Button fx:id="addInventory" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#displaySelectedMenu" prefWidth="226.0" styleClass="menuButton" text="%addInventoryButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="90.0">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/upload_black.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                    <Button fx:id="movement" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#displaySelectedMenu" prefWidth="226.0" styleClass="menuButton" text="%movementButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/movement_black.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                    <Button id="productDepartment" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#displaySelectedMenu" prefWidth="226.0" styleClass="menuButton" text="%departmentsButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/inventory_black.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                  </children>
+                </AnchorPane>
+              </content>
+              <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@img/ico/product_white.png" />
+                  </image>
+                </ImageView>
+              </graphic>
+              <tooltip>
+                <Tooltip text="%inventoryMenuTltp" />
+              </tooltip>
+            </TitledPane>
+            <TitledPane id="x1" fx:id="servicesPane" animated="false" text="%serviceMenu">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="60.0" prefWidth="200.0" styleClass="accordeonPane">
+                  <children>
+                    <Button fx:id="service" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#displaySelectedMenu" prefWidth="226.0" styleClass="menuButton" text="%serviceButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/backup_black.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                    <Button fx:id="serviceOrder" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#displaySelectedMenu" prefWidth="226.0" styleClass="menuButton" text="%serviceOrderButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/serviceorder_black.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                  </children>
+                </AnchorPane>
+              </content>
+              <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@img/ico/backup_white.png" />
+                  </image>
+                </ImageView>
+              </graphic>
+              <tooltip>
+                <Tooltip text="%servicioMenuTltp" />
+              </tooltip>
+            </TitledPane>
+            <TitledPane fx:id="buyPane" animated="false" text="%buyMenu">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="60.0" prefWidth="200.0" styleClass="accordeonPane">
+                  <children>
+                    <Button fx:id="order" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#displaySelectedMenu" prefWidth="226.0" styleClass="menuButton" text="%buyProviderButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/order_blac.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                    <Button fx:id="output" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#displaySelectedMenu" prefWidth="226.0" styleClass="menuButton" text="%buyOutputs" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/close_black.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                  </children>
+                </AnchorPane>
+              </content>
+              <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@img/ico/order_white.png" />
+                  </image>
+                </ImageView>
+              </graphic>
+              <tooltip>
+                <Tooltip text="%buyMenuTltp" />
+              </tooltip>
+            </TitledPane>
+            <TitledPane id="x1" animated="false" text="%sellsMenu">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="60.0" prefWidth="200.0" styleClass="accordeonPane">
+                  <children>
+                    <Button fx:id="invoice" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#displaySelectedMenu" prefWidth="226.0" styleClass="menuButton" text="%invoicesButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/invoices_black.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                    <Button fx:id="quotation" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#displaySelectedMenu" prefWidth="226.0" styleClass="menuButton" text="%quotationsButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/quotation_black.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                  </children>
+                </AnchorPane>
+              </content>
+              <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@img/ico/invoices_white.png" />
+                  </image>
+                </ImageView>
+              </graphic>
+              <tooltip>
+                <Tooltip text="%invoiceMenuTltp" />
+              </tooltip>
+            </TitledPane>
+            <TitledPane fx:id="reportsPane" animated="false" text="%reportsMenu">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="295.0" prefWidth="200.0" styleClass="accordeonPane">
+                  <children>
+                    <Button fx:id="entriesReport" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#loadSettingsModal" prefWidth="226.0" styleClass="menuButton" text="%entriesButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="90.0">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/report_blac.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                    <Button fx:id="expensesReport" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#loadSettingsModal" prefWidth="226.0" styleClass="menuButton" text="%expensesButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/report_blac.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                    <Button id="stock" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#loadSettingsModal" prefWidth="226.0" styleClass="menuButton" text="%inventoryReportButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/report_blac.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                    <Button fx:id="invalidatedInvoices" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#loadSettingsModal" prefWidth="226.0" styleClass="menuButton" text="%ivalidatedInvoicesReportButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="180.0">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/report_blac.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                    <Button id="invalidatedInvoices" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#activeCreditReport" prefWidth="226.0" styleClass="menuButton" text="%ActiveCreditsReportButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="210.0">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/report_blac.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                    <Button id="closeesBoxReport" fx:id="closesBoxButton" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#loadSettingsModal" prefWidth="226.0" styleClass="menuButton" text="%closesBoxReportButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="270.0">
+                      <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/report_blac.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                              <Button fx:id="invoicesReport" alignment="CENTER_LEFT" layoutX="20.0" layoutY="50.0" mnemonicParsing="false" onAction="#loadSettingsModal" prefWidth="226.0" styleClass="menuButton" text="%invoicesButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@img/ico/report_blac.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button id="orderCreditsReport" fx:id="orderCreditsReport" alignment="CENTER_LEFT" layoutX="20.0" layoutY="170.0" mnemonicParsing="false" onAction="#activeCreditReport" prefWidth="226.0" styleClass="menuButton" text="%OrderCreditsReportButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="240.0">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@img/ico/report_blac.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="ordersReport" alignment="CENTER_LEFT" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#loadSettingsModal" prefWidth="226.0" styleClass="menuButton" text="%ordersButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@img/ico/report_blac.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="earningsReport" alignment="CENTER_LEFT" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#loadSettingsModal" prefWidth="226.0" styleClass="menuButton" text="%earningsButton" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@img/ico/report_blac.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                  </children>
+                </AnchorPane>
+              </content>
+              <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@img/ico/report_whit.png" />
+                  </image>
+                </ImageView>
+              </graphic>
+              <tooltip>
+                <Tooltip text="%reportMenuTltp" />
+              </tooltip>
+            </TitledPane>
+          </panes>
+        </Accordion>
+      </children>
+    </AnchorPane>
+    <AnchorPane id="footerPane" prefHeight="18.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <children>
+        <Label styleClass="footerText" text="%appDateRigths" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="0.0" />
+      </children>
+    </AnchorPane>
+    <ImageView fitHeight="45.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="10.0">
+      <image>
+        <Image url="@img/logo.png" />
+      </image>
+    </ImageView>
+    <HBox id="HBox" fx:id="aboutButtonsPanel" alignment="CENTER" spacing="5.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="23.0">
+      <children>
+        <Button id="about" mnemonicParsing="false" onAction="#loadSettingsModal" styleClass="aboutButtons" text="%aboutButton">
+          <tooltip>
+            <Tooltip text="%aboutButtonTltp" />
+          </tooltip>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#helpAction" styleClass="aboutButtons" text="%helpButton">
+          <tooltip>
+            <Tooltip text="%helpButtonTltp" />
+          </tooltip>
+        </Button>
+        <Button fx:id="closeBoxBT" mnemonicParsing="false" onAction="#logOutAction" styleClass="aboutButtons" text="%closeBoxButton">
+          <tooltip>
+            <Tooltip text="%closeBoxButtonTltp" />
+          </tooltip>
+        </Button>
+        <Button fx:id="logOutBT" mnemonicParsing="false" onAction="#logOutAction" styleClass="aboutButtons" text="%logOutButton">
+          <tooltip>
+            <Tooltip text="%logOutButtonTltp" />
+          </tooltip>
+        </Button>
+      </children>
+    </HBox>
+    <HBox id="HBox" alignment="CENTER" spacing="5.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="50.0">
+      <children>
+        <Label text="%userAboutMenu" />
+        <Label fx:id="user" text="user" />
+      </children>
+    </HBox>
+    <Button id="close" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#logOutAction" prefHeight="20.0" prefWidth="20.0" styleClass="exitTrasnparentButton" text="" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+    <Button id="close" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#minimizeButtonAction" prefHeight="20.0" prefWidth="20.0" styleClass="minimizeTrasnparentButton" text="" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="5.0" />
+    <Button id="close" fx:id="helpButton" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#showHideTooltip" prefHeight="20.0" prefWidth="20.0" styleClass="helpTrasnparentButton" text="" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="5.0">
+      <tooltip>
+        <Tooltip fx:id="tlpHelp" text="%helpTltp" />
+      </tooltip>
+    </Button>
+    <Pane fx:id="maskPane" prefHeight="200.0" prefWidth="200.0" styleClass="mask" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+  </children>
+  <stylesheets>
+    <URL value="@css/main_green.css" />
+  </stylesheets>
+</AnchorPane>

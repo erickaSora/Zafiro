@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="mainPane" prefHeight="250.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.zafirodesktop.controller.ProductTaxesController">
+  <children>
+    <AnchorPane id="Content" layoutX="1.0" layoutY="1.0" minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="400.0">
+      <children>
+        <AnchorPane id="headerContent" prefHeight="40.0" prefWidth="680.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+          <children>
+            <HBox id="HBox" alignment="CENTER" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="0.0">
+              <children>
+                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@img/ico/percent_white.png" />
+                  </image>
+                </ImageView>
+                <Label fx:id="title" styleClass="titlelabel" text="title" />
+              </children>
+            </HBox>
+          </children>
+        </AnchorPane>
+        <AnchorPane id="bodyContent" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="40.0">
+          <children>
+            <GridPane AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0">
+              <children>
+                <HBox id="HBox" alignment="CENTER" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                  <children>
+                    <HBox id="box" alignment="CENTER" spacing="0.0">
+                      <children>
+                        <Pane maxHeight="33.0" maxWidth="40.0" prefHeight="33.0" prefWidth="40.0" styleClass="iconContent">
+                          <children>
+                            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="10.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                <Image url="@img/ico/percent_black.png" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </Pane>
+                        <ComboBox id="categories" fx:id="items" onMouseClicked="#itemSelected" prefHeight="33.0" prefWidth="294.0" styleClass="list-cell">
+                          <tooltip>
+                            <Tooltip text="%slctTaxTltp" />
+                          </tooltip>
+                        </ComboBox>
+                      </children>
+                    </HBox>
+                    <Button maxHeight="33.0" maxWidth="30.0" mnemonicParsing="false" onAction="#insertNewItemModal" prefHeight="33.0" prefWidth="30.0" styleClass="addButton" text="">
+                      <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/add_white.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                  </children>
+                </HBox>
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="403.0" minWidth="10.0" prefWidth="178.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+            <HBox id="buttonBox" fx:id="buttonsBox" alignment="CENTER" spacing="30.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+              <children>
+                <Button fx:id="saveButton" mnemonicParsing="false" onAction="#insertItem" prefHeight="30.0" prefWidth="100.0" styleClass="actionButton" text="%saveButton">
+                  <graphic>
+                    <ImageView fitHeight="15.0" fitWidth="15.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@img/ico/ok_white.png" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                </Button>
+                <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteItem" prefHeight="30.0" prefWidth="100.0" styleClass="removeButton" text="%deleteButton">
+                  <graphic>
+                    <ImageView fitHeight="15.0" fitWidth="15.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@img/ico/remove_white.png" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                </Button>
+                <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="30.0" prefWidth="100.0" styleClass="cancelButton" text="%cancelButton">
+                  <graphic>
+                    <ImageView fitHeight="15.0" fitWidth="15.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@img/ico/close_black.png" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                </Button>
+              </children>
+            </HBox>
+          </children>
+        </AnchorPane>
+        <Button id="close" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="20.0" prefWidth="20.0" styleClass="exitTrasnparentButton" text="" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+        <Button id="close" fx:id="helpButton" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#showHideTooltip" prefHeight="20.0" prefWidth="20.0" styleClass="helpTrasnparentButton" text="" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="10.0">
+          <tooltip>
+            <Tooltip text="%helpTltp" fx:id="tlpHelp" />
+          </tooltip>
+        </Button>
+      </children>
+    </AnchorPane>
+  </children>
+  <stylesheets>
+    <URL value="@css/modal_green.css" />
+  </stylesheets>
+</AnchorPane>

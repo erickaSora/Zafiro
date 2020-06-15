@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="mainPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zafirodesktop.controller.WelcomeController">
+  <children>
+    <ScrollPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-5.0" AnchorPane.topAnchor="-5.0">
+      <content>
+        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="600.0">
+          <children>
+            <AnchorPane id="headerContent" prefHeight="40.0" prefWidth="680.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+              <children>
+                <HBox id="HBox" alignment="CENTER" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@img/ico/serviceorder_white.png" />
+                      </image>
+                    </ImageView>
+                    <Label styleClass="titlelabel" text="%licenseTitle" />
+                  </children>
+                </HBox>
+              </children>
+            </AnchorPane>
+            <AnchorPane id="bodyContent" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="40.0">
+                     <children>
+                        <TextArea editable="false" layoutX="173.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" styleClass="totalValueslabel" text="CONTRATO DE LICENCIA Y TÉRMINOS Y CONDICIONES SCIREBOX 1.0    El contrato siguiente actúa como una licencia para el usuario final por medio de la cual se le otorga permiso de instalar y usar una (1) copia de este software en un (1) computador al mismo tiempo, los software cliente que se conectan a través de una red local, requieren de configuración adicional y por lo tanto su adquisición y términos y condiciones pueden ser diferentes a las aquí estipuladas, las cuales se especifican con mayor detalle a continuación.Importante, al instalar y usar este software, el usuario está aceptando las condiciones de este contrato, si no acepta las condiciones del mismo, absténgase de instalarlo. Este contrato especifica compromisos de uso y soporte, exclusiones de garantía, limitaciones de responsabilidad y recursos exclusivos. Las estipulaciones siguientes constituyen el fundamento esencial de este acuerdo.Permiso de usoLa licencia se le otorga a un usuario específico de acuerdo a la razón social de su negocio o entidad desde la cual va a emitir las facturas, siempre y cuando se encuentre instalada y en funcionamiento en un solo punto de venta o sucursal a la vez. Esta licencia le permite a ese usuario utilizar, instalar, y migrar de un computador a otro de acuerdo a las siguientes condiciones:1.El usuario debe tener asociada una copia de este contrato de licencia y un serial en el medio de adquisición del software, así mismo, deberá estar registrado en las bases de datos de SCIRE SOLUTIONS S.A.S.2.La instalación del aplicativo y el ID de licencia respectivo deben coincidir con los entregados en la distribución.3.El usuario debe abstenerse de instalar el aplicativo en más de un (1) computador sin tener antes la autorización directa de SCIRE SOLUTIONS S.A.S.4.El usuario debe abstenerse de instalar el aplicativo a terceros, ya que, el ID asociado a la licencia permite solo una (1) instalación a la vez, lo cual, permitiría su funcionamiento únicamente en el último PC en el que fue instalado.5.El usuario no tendrá derecho de acceder y/o modificar el aplicativo, cualquier modificación y/o extracción de información del aplicativo sin autorización directa de SCIRE SOLUTIONS S.A.S., será tomado como violación a los derechos de autor y la protección de datos.6.El usuario se compromete a consignar información veraz y consecuente de acuerdo a los movimientos de su negocio, cualquier comportamiento ilegal será completa responsabilidad del usuario. SoporteAnexa a esta licencia se asocia un contrato de soporte firmado entre el usuario y SCIRE SOLUTIONS S.A.S. en común acuerdo. Este documento consigna los acuerdos de prestación de servicio de soporte sobre el aplicativo de acuerdo al nivel de servicio acordado entre las partes,  junto con su fechas de inicio y caducidad; cualquier petición y/o reclamación efectuada por fuera de las fechas de validez y/o por fuera del acuerdo del nivel de servicio, no serán atendidas por SCIRE SOLUTIONS S.A.S mientras no se prorrogue o defina un nuevo contrato de licencia.IndemnizaciónEl usuario se compromete a indemnizar y mantener indemne a los autores del software y cualquier colaborador de ningún daño directo, indirecto, incidental o consecuente de reclamaciones de terceros, acciones o demandas, así como los gastos relacionados, responsabilidades, daños, acuerdos u honorarios derivados del mal uso del aplicativo, o una violación a los términos de esta licencia.GarantíaEl aplicativo se proporciona “tal cual” de acuerdo a la versión y funcionalidades asociadas, la garantía es limitada y solo cubrirá fallos en dichas funcionalidades sobre los sistemas operativos especificados en los requisitos de instalación, durante el mismo periodo de tiempo asociado al contrato de soporte. El aplicativo no proporciona ningún tipo de garantía por daños o mal funcionamiento del sistema operativo y/o computador en donde haya sido instalado.   Limitaciones de responsabilidadEl usuario asume todos los riesgos asociados a la instalación y uso del aplicativo, en ningún caso los autores o titulares del COPYRIGHT del software serán responsables para reclamaciones, daños u otras responsabilidades derivadas o en relación con el software. La distribución provee requisitos necesarios para su instalación y es el titular de la licencia el único responsable del adecuado uso del software y asume responsabilidad por posibles daños al equipo, pérdida de datos o programas de software y no disponibilidad o interrupción de las operaciones." wrapText="true" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
+                        <CheckBox fx:id="licenseAcept" layoutX="21.0" layoutY="329.0" mnemonicParsing="false" onAction="#updateLicenseChoosed" text="%licenceAccept" visible="false" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="20.0" />
+                        <Button fx:id="aboutLicense" disable="true" mnemonicParsing="false" onAction="#initiateConfig" prefHeight="35.0" prefWidth="110.0" styleClass="actionButton" text="%okButton" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="20.0">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/ico/ok_white.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+            </AnchorPane>
+            <Button id="close" maxWidth="20.0" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="20.0" prefWidth="20.0" styleClass="exitTrasnparentButton" text="" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+          </children>
+        </AnchorPane>
+      </content>
+    </ScrollPane>
+  </children>
+  <stylesheets>
+    <URL value="@css/modal_green.css" />
+  </stylesheets>
+</AnchorPane>

@@ -1,0 +1,214 @@
+.root {
+-fx-font-family:"HelveticaNeue";
+-fx-text-fill: #555555;
+-fx-text-border: #555555;
+-fx-font-size:13px;
+}
+
+#headerContent{
+    -fx-background-color: #555555;
+}
+
+#bodyContent{
+    -fx-border-color: darkgray;
+    -fx-background-insets: 1,1,1,1;
+}
+
+.titlelabel {
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+}
+
+.messageLabel{
+    -fx-font-size: 18px;
+}
+
+.actionButton{
+    -fx-background-color: #d98600;
+    -fx-text-fill: white;
+    -fx-background-radius: 0, 0, 0, 0;
+}
+
+.actionButton:pressed{
+    -fx-background-color:
+        -fx-shadow-highlight-color,
+        linear-gradient(to bottom, derive(#f39c12,-90%) 0%, derive(#f39c12,-60%) 100%),
+        linear-gradient(to bottom, derive(#f39c12,-60%) 0%, derive(#f39c12,-35%) 50%, derive(#f39c12,-30%) 98%, derive(#f39c12,-50%) 100%),
+        linear-gradient(to right, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 10%, rgba(0,0,0,0) 90%, rgba(0,0,0,0.3) 100%);
+    -fx-background-insets: 0 0 -1 0, 0, 1, 1;
+    -fx-text-fill: -fx-light-text-color;
+}
+
+.trasnparentButton{
+    -fx-background-color: transparent;
+    -fx-text-fill: #f39c12;
+    -fx-font-size:18px;
+}
+
+.removeButton{
+    -fx-background-color: #840909;
+    -fx-text-fill: white;
+    -fx-background-radius: 0, 0, 0, 0;
+}
+
+.removeButton:pressed{
+    -fx-background-color:
+        -fx-shadow-highlight-color,
+        linear-gradient(to bottom, derive(#840909,-90%) 0%, derive(#840909,-60%) 100%),
+        linear-gradient(to bottom, derive(#840909,-60%) 0%, derive(#840909,-35%) 50%, derive(#840909,-30%) 98%, derive(#840909,-50%) 100%),
+        linear-gradient(to right, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 10%, rgba(0,0,0,0) 90%, rgba(0,0,0,0.3) 100%);
+    -fx-background-insets: 0 0 -1 0, 0, 1, 1;
+    -fx-text-fill: -fx-light-text-color;
+}
+
+.printButton{
+    -fx-background-color: #0973ba;
+    -fx-text-fill: white;
+    -fx-background-radius: 0, 0, 0, 0;
+}
+
+.pdfButton{
+    -fx-background-color: white;
+    -fx-border-color: #d53417;
+    -fx-text-fill: #d53417;
+    -fx-background-radius: 0, 0, 0, 0;
+}
+
+.pdfButton:pressed{
+    -fx-background-color:
+        -fx-shadow-highlight-color,
+        linear-gradient(to bottom, derive(#d53417,-90%) 0%, derive(#d53417,-60%) 100%),
+        linear-gradient(to bottom, derive(#d53417,-60%) 0%, derive(#d53417,-35%) 50%, derive(#d53417,-30%) 98%, derive(#d53417,-50%) 100%),
+        linear-gradient(to right, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 10%, rgba(0,0,0,0) 90%, rgba(0,0,0,0.3) 100%);
+    -fx-background-insets: 0 0 -1 0, 0, 1, 1;
+    -fx-text-fill: -fx-light-text-color;
+}
+
+.printButton:pressed{
+    -fx-background-color:
+        -fx-shadow-highlight-color,
+        linear-gradient(to bottom, derive(#0973ba,-90%) 0%, derive(#0973ba,-60%) 100%),
+        linear-gradient(to bottom, derive(#0973ba,-60%) 0%, derive(#0973ba,-35%) 50%, derive(#0973ba,-30%) 98%, derive(#0973ba,-50%) 100%),
+        linear-gradient(to right, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 10%, rgba(0,0,0,0) 90%, rgba(0,0,0,0.3) 100%);
+    -fx-background-insets: 0 0 -1 0, 0, 1, 1;
+    -fx-text-fill: -fx-light-text-color;
+}
+
+.addButton{
+    -fx-background-color: #429c46;
+    -fx-text-fill: white;
+    -fx-background-radius: 0, 0, 0, 0;
+}
+
+.addButton:pressed{
+    -fx-background-color:
+        -fx-shadow-highlight-color,
+        linear-gradient(to bottom, derive(#429c46,-90%) 0%, derive(#429c46,-60%) 100%),
+        linear-gradient(to bottom, derive(#429c46,-60%) 0%, derive(#429c46,-35%) 50%, derive(#429c46,-30%) 98%, derive(#429c46,-50%) 100%),
+        linear-gradient(to right, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 10%, rgba(0,0,0,0) 90%, rgba(0,0,0,0.3) 100%);
+    -fx-background-insets: 0 0 -1 0, 0, 1, 1;
+    -fx-text-fill: -fx-light-text-color;
+}
+
+.cancelButton{
+    -fx-background-color: lightgrey;
+    -fx-text-fill: black;
+    -fx-background-radius: 0, 0, 0, 0;
+}
+
+.cancelButton:pressed{
+    -fx-background-color:
+        -fx-shadow-highlight-color,
+        linear-gradient(to bottom, derive(lightgrey,-90%) 0%, derive(lightgrey,-60%) 100%),
+        linear-gradient(to bottom, derive(lightgrey,-60%) 0%, derive(lightgrey,-35%) 50%, derive(lightgrey,-30%) 98%, derive(lightgrey,-50%) 100%),
+        linear-gradient(to right, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 10%, rgba(0,0,0,0) 90%, rgba(0,0,0,0.3) 100%);
+    -fx-background-insets: 0 0 -1 0, 0, 1, 1;
+    -fx-text-fill: -fx-light-text-color;
+}
+
+.text-input:focused{
+    -fx-background-color:
+        #f39c12,
+        #FFFFFF;
+}
+
+.iconContent{
+    -fx-border-color: lightgrey;
+    -fx-background-insets: 1,1,1,1;
+}
+
+.combo-box .list-cell{
+-fx-base: #555555;
+-fx-background-color: #555555;
+-fx-text-fill: white; 
+-fx-background-radius: 0, 0, 0, 0;
+}
+
+.lblValidateError{
+    -fx-text-fill: #d53417;
+}
+
+.txfValidateError{
+    -fx-background-color:
+        #d53417,
+        #FFFFFF;
+}
+
+.txfValidateError:focused{
+    -fx-background-color:
+        #d53417,
+        #FFFFFF;
+}
+
+.table-view{
+    -fx-base: #555555;
+}
+
+.table-view .column-header .label{
+    -fx-background-color: #555555;
+    -fx-text-fill: white;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #555555;
+}
+
+.table-view:focused .table-row-cell:filled:focused:selected{
+    -fx-background-color: #f39c12;
+}
+
+.list-view{
+    -fx-background-color: #f39c12;
+}
+
+.list-view:filled:selected:focused, .list-cell:filled:selected {
+    -fx-background-color: #d98600;
+    -fx-text-fill: white; 
+}
+
+.totalValueslabel {
+    -fx-font-weight: bold;
+    -fx-font-size: 18px;
+}
+
+.messagesLabel {
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.checkerValueslabel {
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+}
+
+.returnValueslabel {
+    -fx-font-weight: bold;
+    -fx-font-size: 28px;
+    -fx-text-fill: #429c46;
+}
+
+.checkerTotalValueslabel {
+    -fx-font-weight: bold;
+    -fx-font-size: 30px;
+    -fx-text-fill: #d98600;
+}

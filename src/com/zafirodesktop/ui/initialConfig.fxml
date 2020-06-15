@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="mainPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zafirodesktop.controller.InitialConfigController">
+  <children>
+    <ScrollPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-5.0" AnchorPane.topAnchor="-5.0">
+      <content>
+        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="600.0">
+          <children>
+            <AnchorPane id="headerContent" prefHeight="40.0" prefWidth="680.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+              <children>
+                <HBox id="HBox" alignment="CENTER" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@img/ico/settings_white.png" />
+                      </image>
+                    </ImageView>
+                    <Label styleClass="titlelabel" text="%configBussinessInfoTitle" />
+                  </children>
+                </HBox>
+              </children>
+            </AnchorPane>
+            <AnchorPane id="bodyContent" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="40.0">
+              <children>
+                <GridPane hgap="5.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0">
+                  <children>
+                    <HBox id="HBox" alignment="CENTER" spacing="0.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                      <children>
+                        <Pane maxHeight="33.0" maxWidth="40.0" prefHeight="33.0" prefWidth="40.0" styleClass="iconContent">
+                          <children>
+                            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="10.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                <Image url="@img/ico/report_black.png" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </Pane>
+                        <TextField fx:id="txtBussinesName" onKeyReleased="#validateBN" prefHeight="35.0" prefWidth="325.0" visible="true" />
+                      </children>
+                    </HBox>
+                    <HBox id="HBox" alignment="CENTER" spacing="0.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                      <children>
+                        <Pane maxHeight="33.0" maxWidth="40.0" prefHeight="33.0" prefWidth="40.0" styleClass="iconContent">
+                          <children>
+                            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="10.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                <Image url="@img/ico/id_black.png" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </Pane>
+                        <TextField fx:id="txtNit" onKeyReleased="#validateNT" prefHeight="35.0" prefWidth="326.0" visible="true" />
+                      </children>
+                    </HBox>
+                    <Label fx:id="lblValidate2" styleClass="lblValidateError" text="Label" visible="false" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <Label fx:id="lblValidate1" styleClass="lblValidateError" text="Label" visible="false" wrapText="true" GridPane.columnIndex="1" />
+                    <Label fx:id="lblValidate3" styleClass="lblValidateError" text="Label" visible="false" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                    <Label fx:id="lblValidate5" styleClass="lblValidateError" text="Label" visible="false" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                    <HBox id="HBox" alignment="CENTER" spacing="0.0" GridPane.rowIndex="3">
+                      <children>
+                        <Pane maxHeight="33.0" maxWidth="40.0" prefHeight="33.0" prefWidth="40.0" styleClass="iconContent">
+                          <children>
+                            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="10.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                <Image url="@img/ico/product_black.png" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </Pane>
+                        <TextField fx:id="txtPhoneNumber" onKeyReleased="#validatePN" prefHeight="35.0" prefWidth="326.0" visible="true" />
+                      </children>
+                    </HBox>
+                    <HBox id="HBox" alignment="CENTER" spacing="0.0" GridPane.rowIndex="4">
+                      <children>
+                        <Pane maxHeight="33.0" maxWidth="40.0" prefHeight="33.0" prefWidth="40.0" styleClass="iconContent">
+                          <children>
+                            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="10.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                <Image url="@img/ico/home_black.png" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </Pane>
+                        <TextField fx:id="txtAddress" onKeyReleased="#validateAD" prefHeight="35.0" prefWidth="326.0" visible="true" />
+                      </children>
+                    </HBox>
+                    <HBox id="HBox" alignment="CENTER" spacing="0.0" GridPane.rowIndex="5">
+                      <children>
+                        <Pane maxHeight="33.0" maxWidth="40.0" prefHeight="33.0" prefWidth="40.0" styleClass="iconContent">
+                          <children>
+                            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="10.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                <Image url="@img/ico/city_black.png" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </Pane>
+                        <TextField fx:id="txtCity" onKeyReleased="#validateCT" prefHeight="35.0" prefWidth="326.0" visible="true" />
+                      </children>
+                    </HBox>
+                    <Label fx:id="lblValidate4" styleClass="lblValidateError" text="Label" visible="false" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <HBox id="HBox" alignment="CENTER" layoutX="10.0" layoutY="10.0" spacing="0.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Pane maxHeight="33.0" maxWidth="40.0" prefHeight="33.0" prefWidth="40.0" styleClass="iconContent">
+                                       <children>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="10.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@img/ico/report_blac.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <TextField fx:id="txtSerial" onKeyReleased="#validateSR" prefHeight="35.0" prefWidth="325.0" visible="true" />
+                                 </children>
+                              </HBox>
+                              <Label fx:id="lblValidateSr" layoutX="375.0" layoutY="25.0" styleClass="lblValidateError" text="Label" visible="false" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  </children>
+                  <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="403.0" minWidth="10.0" prefWidth="403.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="314.0" minWidth="10.0" prefWidth="234.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                </GridPane>
+              </children>
+            </AnchorPane>
+            <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveBussinesInfo" prefHeight="30.0" prefWidth="150.0" styleClass="actionButton" text="%nextButton" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+            <Button id="close" maxWidth="20.0" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="20.0" prefWidth="20.0" styleClass="exitTrasnparentButton" text="" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+          </children>
+        </AnchorPane>
+      </content>
+    </ScrollPane>
+    <HBox fx:id="actualState" alignment="CENTER" spacing="5.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+  </children>
+  <stylesheets>
+    <URL value="@css/modal_green.css" />
+  </stylesheets>
+</AnchorPane>

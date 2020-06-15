@@ -1,0 +1,4 @@
+SOFTWARE: ZafiroDesktop
+VERSIÓN: 1.0
+FUENTE: privado
+PROPIEDAD: privado.

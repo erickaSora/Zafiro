@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="mainPane" prefHeight="740.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zafirodesktop.controller.InvoiceController">
+  <children>
+    <ScrollPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0">
+      <content>
+        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="740.0" prefWidth="1000.0">
+          <children>
+            <AnchorPane id="headerContent" prefHeight="40.0" prefWidth="680.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+              <children>
+                <HBox id="HBox" alignment="CENTER" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@img/ico/serviceorder_white.png" />
+                      </image>
+                    </ImageView>
+                    <Label fx:id="title" styleClass="titlelabel" text="serviceOrderTitle" />
+                  </children>
+                </HBox>
+                <HBox id="HBox" alignment="CENTER" prefHeight="40.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                    <Label fx:id="invNumber" styleClass="titlelabel" text="" />
+                    <Label fx:id="invDate" styleClass="titlelabel" text="" />
+                  </children>
+                </HBox>
+              </children>
+            </AnchorPane>
+            <AnchorPane id="bodyContent" onMouseClicked="#hideListsViewOnClick" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="40.0">
+              <children>
+                <GridPane AnchorPane.bottomAnchor="480.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                  <children>
+                    <HBox id="HBox" alignment="CENTER" spacing="0.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                      <children>
+                        <Pane maxHeight="33.0" maxWidth="40.0" prefHeight="33.0" prefWidth="40.0" styleClass="iconContent">
+                          <children>
+                            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="10.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                <Image url="@img/ico/person_black.png" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </Pane>
+                        <TextField fx:id="idPerson" onAction="#selectedAction" onKeyPressed="#searchAction" onKeyReleased="#validateNIT" prefHeight="35.0" prefWidth="422.0" visible="true">
+                          <tooltip>
+                            <Tooltip text="%invoicePersonIdTltp" />
+                          </tooltip>
+                        </TextField>
+                      </children>
+                    </HBox>
+                    <HBox id="HBox" alignment="CENTER" spacing="0.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                      <children>
+                        <Pane maxHeight="33.0" maxWidth="40.0" prefHeight="33.0" prefWidth="40.0" styleClass="iconContent">
+                          <children>
+                            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="10.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                <Image url="@img/ico/user_black.png" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </Pane>
+                        <TextField fx:id="firstName" onKeyPressed="#hideListsViewOnPress" onKeyReleased="#validateFN" onMouseClicked="#hideListsViewOnClick" prefHeight="35.0" prefWidth="422.0" visible="true">
+                          <tooltip>
+                            <Tooltip text="%personNameTltp" />
+                          </tooltip>
+                        </TextField>
+                      </children>
+                    </HBox>
+                    <HBox id="HBox" alignment="CENTER" spacing="0.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                      <children>
+                        <Pane maxHeight="33.0" maxWidth="40.0" prefHeight="33.0" prefWidth="40.0" styleClass="iconContent">
+                          <children>
+                            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="10.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                <Image url="@img/ico/user_black.png" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </Pane>
+                        <TextField fx:id="lastName" onKeyPressed="#hideListsViewOnPress" onKeyReleased="#validateLN" onMouseClicked="#hideListsViewOnClick" prefHeight="35.0" prefWidth="422.0" visible="true">
+                          <tooltip>
+                            <Tooltip text="%personLastNameTltp" />
+                          </tooltip>
+                        </TextField>
+                      </children>
+                    </HBox>
+                    <HBox id="HBox" alignment="CENTER" spacing="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                      <children>
+                        <Pane maxHeight="33.0" maxWidth="40.0" prefHeight="33.0" prefWidth="40.0" styleClass="iconContent">
+                          <children>
+                            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="10.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                <Image url="@img/ico/product_black.png" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </Pane>
+                        <TextField fx:id="phone" onKeyPressed="#hideListsViewOnPress" onKeyReleased="#validatePN" onMouseClicked="#hideListsViewOnClick" prefHeight="35.0" prefWidth="422.0" visible="true">
+                          <tooltip>
+                            <Tooltip text="%personPhoneNumberTltp" />
+                          </tooltip>
+                        </TextField>
+                      </children>
+                    </HBox>
+                    <HBox id="HBox" alignment="CENTER" spacing="0.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                      <children>
+                        <Pane maxHeight="33.0" maxWidth="40.0" prefHeight="33.0" prefWidth="40.0" styleClass="iconContent">
+                          <children>
+                            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="10.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                <Image url="@img/ico/home_black.png" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </Pane>
+                        <TextField fx:id="addres" onKeyPressed="#hideListsViewOnPress" onKeyReleased="#validateAD" onMouseClicked="#hideListsViewOnClick" prefHeight="35.0" prefWidth="422.0" visible="true">
+                          <tooltip>
+                            <Tooltip text="%personAddressTltp" />
+                          </tooltip>
+                        </TextField>
+                      </children>
+                    </HBox>
+                    <HBox id="HBox" alignment="CENTER" spacing="0.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                      <children>
+                        <Pane maxHeight="33.0" maxWidth="40.0" prefHeight="33.0" prefWidth="40.0" styleClass="iconContent">
+                          <children>
+                            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="10.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                <Image url="@img/ico/city_black.png" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </Pane>
+                        <TextField fx:id="city" onAction="#selectedAction" onKeyPressed="#searchAction" prefHeight="35.0" prefWidth="422.0" visible="true">
+                          <tooltip>
+                            <Tooltip text="%personPlaceTltp" />
+                          </tooltip>
+                        </TextField>
+                      </children>
+                    </HBox>
+                    <HBox id="HBox" alignment="CENTER" spacing="0.0" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                      <children>
+                        <Pane maxHeight="33.0" maxWidth="40.0" prefHeight="33.0" prefWidth="40.0" styleClass="iconContent">
+                          <children>
+                            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="10.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                <Image url="@img/ico/at_black.png" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </Pane>
+                        <TextField id="addres" fx:id="email" onKeyPressed="#hideListsViewOnPress" onKeyReleased="#validateEM" onMouseClicked="#hideListsViewOnClick" prefHeight="35.0" prefWidth="421.0" visible="true">
+                          <tooltip>
+                            <Tooltip text="%personEmailTltp" />
+                          </tooltip>
+                        </TextField>
+                      </children>
+                    </HBox>
+                  </children>
+                  <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="491.0" minWidth="10.0" prefWidth="443.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="457.0" minWidth="10.0" prefWidth="432.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                </GridPane>
+                <HBox id="HBox" fx:id="buttonsBox" alignment="CENTER" spacing="30.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                  <children>
+                    <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveRemission" prefHeight="35.0" prefWidth="110.0" styleClass="actionButton" text="%saveButton">
+                      <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/ok_white.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                    <Button id="saveButton" fx:id="printButton" mnemonicParsing="false" onAction="#print" prefHeight="35.0" prefWidth="110.0" styleClass="printButton" text="%printButton">
+                      <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/print_white.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                    <Button id="saveButton" fx:id="pdfButton" mnemonicParsing="false" onAction="#invoicePrint" prefHeight="35.0" prefWidth="110.0" styleClass="pdfButton" text="%pdfButton">
+                      <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/pdf.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                    <Button fx:id="invoiceButton" disable="true" mnemonicParsing="false" onAction="#invoiceRemission" prefHeight="35.0" prefWidth="110.0" styleClass="addButton" text="factura">
+                      <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/doalr_white.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                      <tooltip>
+                        <Tooltip text="%invoiceButtonTltp" />
+                      </tooltip>
+                    </Button>
+                    <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#showConfirmationDialog" prefHeight="35.0" prefWidth="110.0" styleClass="removeButton" text="%stateButton">
+                      <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/inventory_white.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                      <tooltip>
+                        <Tooltip text="%stateButtonTltp" />
+                      </tooltip>
+                    </Button>
+                    <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="35.0" prefWidth="110.0" styleClass="cancelButton" text="%cancelButton">
+                      <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@img/ico/close_black.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                  </children>
+                </HBox>
+                <GridPane hgap="0.0" vgap="5.0" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="230.0">
+                  <children>
+                    <HBox id="HBox" alignment="CENTER" prefHeight="91.0" spacing="0.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                      <children>
+                        <Pane maxHeight="106.0" maxWidth="40.0" prefHeight="99.0" prefWidth="40.0" styleClass="iconContent">
+                          <children>
+                            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="10.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                <Image url="@img/ico/id_black.png" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </Pane>
+                        <TextArea fx:id="serviceReference" onKeyReleased="#validateRF" onMouseClicked="#hideListsViewOnClick" prefHeight="83.0" prefWidth="676.0" wrapText="true">
+                          <tooltip>
+                            <Tooltip text="%serviceOrderEspTltp" />
+                          </tooltip>
+                        </TextArea>
+                        <Label id="vldMessage" fx:id="vldInfo" maxWidth="100.0" styleClass="lblValidateError" text="Label" visible="false" wrapText="true" />
+                      </children>
+                    </HBox>
+                    <HBox id="HBox" fx:id="annotationsBox" alignment="CENTER_RIGHT" maxHeight="-1.0" maxWidth="848.0" onMouseClicked="#hideListsViewOnClick" prefHeight="86.0" prefWidth="841.0" spacing="2.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                      <children>
+                        <TableView id="productDataTable" fx:id="annotationDataTable" onMouseClicked="#hideListsViewOnClick" prefHeight="86.0" prefWidth="713.0">
+                          <tooltip>
+                            <Tooltip text="%serviceOrderAtonTltp" />
+                          </tooltip>
+                        </TableView>
+                        <VBox id="VBox" alignment="CENTER" onMouseClicked="#hideListsViewOnClick" spacing="5.0">
+                          <children>
+                            <Button id="deleteButton" fx:id="addAnnotationButton" mnemonicParsing="false" onAction="#insertAnnotation" prefHeight="20.0" prefWidth="32.0" styleClass="addButton" text="">
+                              <graphic>
+                                <ImageView fitHeight="15.0" fitWidth="15.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                    <Image url="@img/ico/add_white.png" />
+                                  </image>
+                                </ImageView>
+                              </graphic>
+                            </Button>
+                            <Button id="deleteButton" fx:id="rmvAnnotationButton" mnemonicParsing="false" onAction="#deleteAnnotation" prefHeight="20.0" prefWidth="32.0" styleClass="removeButton" text="">
+                              <graphic>
+                                <ImageView fitHeight="15.0" fitWidth="15.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                    <Image url="@img/ico/remove_white.png" />
+                                  </image>
+                                </ImageView>
+                              </graphic>
+                            </Button>
+                          </children>
+                        </VBox>
+                      </children>
+                    </HBox>
+                    <HBox id="HBox" alignment="CENTER" spacing="0.0" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                      <children>
+                        <VBox id="VBox" fx:id="remissionProductBox" alignment="CENTER_LEFT" prefHeight="181.0" prefWidth="936.0" spacing="5.0">
+                          <children>
+                            <HBox id="HBox" fx:id="getProductBox" alignment="CENTER_LEFT" spacing="0.0">
+                              <children>
+                                <Pane maxHeight="28.0" maxWidth="40.0" prefHeight="28.0" prefWidth="40.0" styleClass="iconContent">
+                                  <children>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="10.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                        <Image url="@img/ico/backup_black.png" />
+                                      </image>
+                                    </ImageView>
+                                  </children>
+                                </Pane>
+                                <TextField fx:id="getProduct" onAction="#selectedAction" onKeyPressed="#searchAction" prefHeight="30.0" prefWidth="572.0" visible="true">
+                                  <tooltip>
+                                    <Tooltip text="%searchProductTltp" />
+                                  </tooltip>
+                                </TextField>
+                                <Label fx:id="vldMessage" prefHeight="17.0" prefWidth="123.0" styleClass="lblValidateError" text="label" visible="false" />
+                                <HBox id="HBox" alignment="CENTER" spacing="5.0" />
+                              </children>
+                            </HBox>
+                            <TableView fx:id="productDataTable" onMouseClicked="#hideListsViewOnClick" prefHeight="133.0" prefWidth="884.0">
+                              <tooltip>
+                                <Tooltip text="%productTableTltp" />
+                              </tooltip>
+                            </TableView>
+                          </children>
+                        </VBox>
+                      </children>
+                    </HBox>
+                  </children>
+                  <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                    <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="116.0" minHeight="10.0" prefHeight="113.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="166.0" minHeight="8.0" prefHeight="11.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="181.0" minHeight="10.0" prefHeight="179.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                </GridPane>
+                <ListView fx:id="personList" onMouseClicked="#selectedActionList" prefHeight="143.0" prefWidth="416.0" visible="false" AnchorPane.leftAnchor="73.0" AnchorPane.topAnchor="52.0" />
+                <ListView fx:id="placesList" onMouseClicked="#selectedActionList" prefHeight="143.0" prefWidth="417.0" visible="false" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="158.0" />
+                <Button fx:id="rmvProductButton" disable="true" mnemonicParsing="false" onAction="#removeProductTableView" onMouseClicked="#hideListsViewOnClick" prefHeight="28.0" prefWidth="39.9998779296875" styleClass="removeButton" text="" AnchorPane.bottomAnchor="223.0" AnchorPane.rightAnchor="22.0">
+                  <graphic>
+                    <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@img/ico/rmvproduct_white.png" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                  <tooltip>
+                    <Tooltip text="%removeProductTltp" />
+                  </tooltip>
+                </Button>
+                <ListView fx:id="productList" onMouseClicked="#selectedActionList" prefHeight="143.0" prefWidth="570.0" visible="false" AnchorPane.bottomAnchor="82.0" AnchorPane.leftAnchor="72.0" />
+              </children>
+            </AnchorPane>
+            <Button id="close" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="20.0" prefWidth="20.0" styleClass="exitTrasnparentButton" text="" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+            <Button id="close" fx:id="helpButton" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#showHideTooltip" prefHeight="20.0" prefWidth="20.0" styleClass="helpTrasnparentButton" text="" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="10.0">
+              <tooltip>
+                <Tooltip fx:id="tlpHelp" text="%helpTltp" />
+              </tooltip>
+            </Button>
+          </children>
+        </AnchorPane>
+      </content>
+    </ScrollPane>
+  </children>
+  <stylesheets>
+    <URL value="@css/modal_green.css" />
+  </stylesheets>
+</AnchorPane>
